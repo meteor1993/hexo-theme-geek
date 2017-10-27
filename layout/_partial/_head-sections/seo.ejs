@@ -1,9 +1,9 @@
 <!--SEO-->
-<% if(config.description){ %>
-    <meta name="description" content="<%= config.description%>"/>
-<% } %>
 <% if(config.keywords){ %>
     <meta name="keywords" content="<%= config.keywords%>"/>
+<% } %>
+<% if(config.description){ %>
+    <meta name="description" content="<%= config.description%>"/>
 <% } %>
 <% var robotMeta = theme.robot||'all'; %>
 <meta name="robots" content="<%= robotMeta%>" />
