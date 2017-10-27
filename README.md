@@ -1,6 +1,16 @@
-# hexo-theme-snippet
+# hexo-theme-itmuch
 
-Snippet 简洁而不简单，也许是一款你寻找已久的hexo主题。
+> 说明：本主题在<https://github.com/shenliyang/hexo-theme-snippet> 的基础上进行二次开发，主要做了以下改进：
+>
+> 1. 修正原主题 `/tags` 、`/categories` 、`/archive` 、`/about` 页面显示不正确的问题；
+> 2. 修改部分样式，主要是页头与右边侧边栏
+> 3. 添加了本地搜索的能力。
+>
+> 在二次开发的过程中，也部分参考了<https://github.com/wiliam2015/hexo-theme-snippet> 的代码。
+>
+> **欢迎大家Star、Fork、提意见、喷。**
+
+ITMuch 简洁而不简单，也许是一款你寻找已久的hexo主题。
 
 如果本主题也是你喜欢的菜，请动动手指 [Star](https://github.com/shenliyang/hexo-theme-snippet/stargazers) 支持一下:pray:
 
@@ -10,9 +20,12 @@ Snippet 简洁而不简单，也许是一款你寻找已久的hexo主题。
 [![hexo version](https://img.shields.io/badge/hexo-%3E%3D%203.0-blue.svg)](http://hexo.io)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/shenliyang/hexo-theme-snippet/blob/master/LICENSE)
 
-[主题预览 Demo](http://shenliyang.github.io) 
+[主题预览 Demo](http://www.itmuch.com) 
 
-![hexo-theme-snippet](http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/snippet-screenshots2000.jpg)
+![preview-1](images/1.png)
+
+![preview-2](images/2.png)
+
 
 
 ## 主题特点
@@ -52,7 +65,7 @@ Snippet 简洁而不简单，也许是一款你寻找已久的hexo主题。
 2. Git方式，在Hexo根目录执行：
 ``` bash
     git clone git://github.com/shenliyang/hexo-theme-snippet.git themes/snippet
-``` 
+```
 
 ### 3. 安装插件
 
@@ -103,7 +116,7 @@ Snippet 简洁而不简单，也许是一款你寻找已久的hexo主题。
 ``` bash
     cd themes/snippet
     git pull
-``` 
+```
 
 # **主题篇**
 
