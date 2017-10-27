@@ -13,9 +13,18 @@
                             <li role="presentation"><a href="<%- item.url%>"><i class="fa fa-fw <%- item.icon%>"></i><%= __(item.page+'') %></a>
                             </li>
                         <%})%>
+                             <% var hasSearch = config.search %>
+                             <% if(hasSearch){ %>
+                             <li role="presentation" ><a href="javascript:;" class="popup-trigger"><i class="fa fa-search "></i><%= __('search.name') %></a></li>
+                             <% } %>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+    <% if(hasSearch){ %>
+    <div class="site-search">
+        <%- partial('search/localsearch') %>
+    </div>
+    <% } %>
 </nav>
