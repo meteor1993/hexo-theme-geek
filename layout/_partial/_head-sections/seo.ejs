@@ -1,10 +1,16 @@
 <!--SEO-->
-<% if(config.keywords){ %>
-    <meta name="keywords" content="<%= config.keywords%>"/>
-<% } %>
-<% if(config.description){ %>
-    <meta name="description" content="<%= config.description%>"/>
-<% } %>
+<% if(page.keywords){ %>
+    <meta name="keywords" content="{{ page.keywords }}" />
+<% } else if(page.tags && page.tags.length) { %>
+    <meta name="keywords" content="<% page.tags.forEach(function (item) {%><%- item.name%>,<%})%>" />
+<% } else{ %>
+    <meta name="keywords" content="<%= config.keywords%>" />
+<%}%>
+<% if(page.content){ %>
+    <meta name="description" content="<%- truncate(strip_html(page.content), {length: 90, omission: '...'}) %>" />
+<% } else{ %>
+    <meta name="description" content="<%= config.description%>" />
+<%}%>
 <% var robotMeta = theme.robot||'all'; %>
 <meta name="robots" content="<%= robotMeta%>" />
 <meta name="google" content="<%= robotMeta%>" />
