@@ -24,17 +24,20 @@
         <%- page.content %>
     </div>
 
-    <div class="post-footer">   
-        <div>
-            <% if(theme.archiveCopyright){ %>
-                转载声明: <%- theme.archiveCopyright.tip %>
-            <% } %>
+    <div class="post-footer">
+        <div class="col-sm-10">
+            <div>
+                <b>本文链接</b>：<a href="<%- url_for(page.path) %>"><%- page.title%></a>
+            </div>
+            <div>
+                <% if(theme.archiveCopyright){ %>
+                    <b>转载声明</b>：<%- theme.archiveCopyright.tip %>
+                <% } %>
+            </div>
         </div>
-        <div>
-            <% if(theme.cc){ %>
-                <%= __('post_licence') %>: <%- theme.cc %>
-            <% } %>
-        </div>  
+        <div class="col-sm-2">
+            <img src="<%- theme.aboutme.image%>" width=100% />
+        </div>
     </div>
 </article>
 
