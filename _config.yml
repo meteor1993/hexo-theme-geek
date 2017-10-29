@@ -5,19 +5,19 @@
 menu:
 - page: Spring Cloud|周立
   url: /
-  icon: 
+  icon: fa-home
 - page: 分类
   url: /categories
-  icon: 
+  icon: fa-list
 - page: 关于
   url: /about
-  icon: 
+  icon: fa-user
 - page: 归档
   url: /archives
-  icon: 
+  icon: fa-archive
 - page: 标签
   url: /tags
-  icon:
+  icon: fa-tag
 
 
 
@@ -44,7 +44,7 @@ widgets:
 aboutme:
   image: /icons/wx.jpg
   author: 周立
-  words: 我就是我好哈哈哈哈哈哈哈哈和
+  words: 《Spring Cloud与Docker微服务架构实战》作者<br/>Spring4All社区发起人之一
 
 ## 网站公告设置
 notification: |-
@@ -102,7 +102,7 @@ defaultImgs:
   - 
 
 ## 截取文章首页描述字数
-excerptLength: 120
+excerptLength: 240
 
 ## 当无分类时显示文字，默认为'无'
 noCategoryText: '无'
