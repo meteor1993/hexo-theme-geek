@@ -7,7 +7,7 @@
     <meta name="keywords" content="<%= config.keywords%>" />
 <%}%>
 <% if(page.content){ %>
-    <meta name="description" content="<%- truncate(strip_html(page.content), {length: 90, omission: '...'}) %>" />
+    <meta name="description" content="<%- truncate(strip_html(page.content), {length: 150, omission: '...'}) %>" />
 <% } else{ %>
     <meta name="description" content="<%= config.description%>" />
 <%}%>
