@@ -49,7 +49,9 @@ aboutme:
 ## 网站公告设置
 notification: |-
             <p>
-              <b>笔者微信：jumping_me，欢迎加我<br/>公众号：请扫描我的头像</b>
+              <b>笔者微信</b>：jumping_me，欢迎加我<br/>
+              <b>公众号</b>：请扫描我的头像<br/>
+              <b>本站主题</b>：<a href="http://github.com/itmuch/hexo-theme-itmuch">下载</a>
             </p>
 
 ## 社交设置
@@ -171,3 +173,7 @@ search:
   field: post
   format: html
   limit: 10000
+# 是否开启fork me on github
+fork_me_on_github:
+  enabled: true
+  url: http://github.com/eacdy
