@@ -3,32 +3,23 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         <% theme.menu.forEach(function (item) {%>
-                            <li role="presentation"><a href="<%- item.url%>"><i class="fa fa-fw <%- item.icon%>"></i><%= __(item.page+'') %></a>
+                            <li role="presentation" class="text-center">
+                                <a href="<%- item.url%>"><i class="fa <%- item.icon%>"></i><%= __(item.page+'') %></a>
                             </li>
                         <%})%>
-                             <% var hasSearch = config.search %>
-                             <% if(hasSearch){ %>
-                             <li role="presentation"><a href="javascript:;" class="popup-trigger"><i class="fa fa-fw fa-search"></i><%= __('search.name') %></a></li>
-                             <% } %>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <% if(hasSearch){ %>
-    <div class="site-search">
-        <%- partial('search/localsearch') %>
-    </div>
-    <% } %>
 </nav>
-
 <% if(theme.fork_me_on_github.enabled){ %>
 <a href="<%- theme.fork_me_on_github.url%>">
     <img style="position: absolute; top: 0; right: 0; border: 0;"
