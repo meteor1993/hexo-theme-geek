@@ -12,21 +12,17 @@
 
 ITMuch 简洁而不简单，也许是一款你寻找已久的hexo主题。
 
-如果本主题也是你喜欢的菜，请动动手指 [Star](https://github.com/shenliyang/hexo-theme-snippet/stargazers) 支持一下:pray:
+如果本主题也是你喜欢的菜，请动动手指 [Star](https://github.com/shenliyang/hexo-theme-snippet/stargazers) 支持一下
 
 [![Build Status](https://www.travis-ci.org/shenliyang/hexo-theme-snippet.svg?branch=master)](https://www.travis-ci.org/shenliyang/hexo-theme-snippet)
 [![codebeat badge](https://codebeat.co/badges/6ef2dcd2-af90-40e0-9628-ac689441f774)](https://codebeat.co/projects/github-com-shenliyang-hexo-theme-snippet-master)
-[![mnt-image](https://img.shields.io/maintenance/yes/2017.svg)](../../commits/master)
+[![mnt-image](https://img.shields.io/maintenance/yes/2018.svg)](../../commits/master)
 [![hexo version](https://img.shields.io/badge/hexo-%3E%3D%203.0-blue.svg)](http://hexo.io)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/shenliyang/hexo-theme-snippet/blob/master/LICENSE)
 
 [主题预览 Demo](http://www.itmuch.com) 
 
 ![preview-1](images/1.png)
-
-![preview-2](images/2.png)
-
-
 
 ## 主题特点
 
@@ -37,14 +33,14 @@ ITMuch 简洁而不简单，也许是一款你寻找已久的hexo主题。
 - [x] 网站公告功能
 - [x] 首页图片懒加载
 - [x] 首页文章缩略图自动检索文章内图片，支持自动随机图片
-- [x] 支持响应式
-- [x] 对IE浏览器的检测和警告
-- [x] 评论系统支持友言和Gitment
+- [x] 主题支持响应式
+- [x] 站内本地搜索和谷歌搜索
+- [x] 支持多个第三方评论系统
 - [x] 版权信息可配置
 - [x] 支持网站统计和文章推送
 - [x] 移动端的简洁设计
 - [x] 支持代码高亮并支持自定义高亮样式
-- [x] 支持Shell脚本一键使用Travis CI持续部署Hexo博客
+- [x] 支持Shell脚本一键使用Travis CI自动化部署博客
 
 
 # **基础篇**
@@ -67,7 +63,7 @@ ITMuch 简洁而不简单，也许是一款你寻找已久的hexo主题。
     git clone git://github.com/shenliyang/hexo-theme-snippet.git themes/snippet
 ```
 
-### 3. 安装插件
+### 3. 安装主题插件
 
 因为 **hexo-theme-snippet** 使用了 `ejs` 模版引擎 、 `Less` CSS预编译语言以及在官方插件的基础上
 进行功能的开发，以下为必装插件：
@@ -124,12 +120,9 @@ ITMuch 简洁而不简单，也许是一款你寻找已久的hexo主题。
 
 ``` yaml
 
-# layout -- 布局相关
-# language: zh-CN 默认语言
-
 ## menu -- 导航菜单显示{[@page:名字,@url:地址,@icon:图标]}
 menu:
-- page: home 
+- page: home
   url: /
   icon: fa-home
 
@@ -144,7 +137,8 @@ rss: /atom.xml
 
 ## widgets -- 6个左边小工具{@widgets:[notification,category,archive,tagcloud,friends]}
 widgets:
-- notification 
+- search
+- notification
 - social
 - category
 - archive
@@ -153,18 +147,29 @@ widgets:
 
 # 各个小工具的设置
 
+## 搜索
+jsonContent:
+  searchLocal: true // 是否启用本地搜索
+  searchGoogle: true //是否启用谷歌搜索
+  posts:
+    title: true
+    text: true
+    content: true
+    categories: false
+    tags: false
+
 ## notification config --网站公告设置,支持 html 和 纯文本
-notification: |- 
+notification: |-
             <p>主题已经上线！欢迎下载或更新~ <br/>
             主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
-            <hr/>接受贡献，包括不限于提交问题与需求，修复代码。欢迎Pull Request。<br/>支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a></p>
+            <hr/>接受贡献，包括不限于提交问题与需求，修复代码。欢迎Pull Request<br/>支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a></p>
 
 ## 社交设置{@name:社交工具名字，@icon:社交工具图标，@href:设置工具链接} [参考图标](http://fontawesome.io/icons/)
 social:
  - name: Github
    icon: git
    href: //github.com/shenliyang
-   
+
 ## 文章分类设置{@cate_config:{@show_count:是否显示数字，@show_current: 是否高亮当前category}}
 cate_config:
    show_count: true
@@ -186,47 +191,41 @@ links:
 ## 网站宣传语{@branding：网站宣传语(不设置显示本地图片)}
 branding: 从未如此简单有趣
 
-## 懒加载图片占位符
-placeholder: ./img/loading.gif //为了友好，不建议改动
+## 设置banner背景图片
+banner:
+    img:
+
+## 首页列表底部面板{@homePanel: 是否开启}
+homePanel: true
 
 ## 首页文章列表缩略图
 ### 加载规则: 自定义文章缩略图(在Front-matter中添加的'img'字段) > 文章内的图片 > defaultImgs(随机获取) > 无图模式列表
-  
+
 ## 自定义随机图片
 defaultImgs:
   - http://www.example.jpg //远程图片链接示例
   - /img/default-1.jpg //本地图片链接示例
 
-## 截取文章首页描述字数
+### 文章摘要{@摘要显示优先级：自定义摘要 > 自动截取摘要 }
+### 自定义摘要范围{@<!--more-->:截取more之前的内容为摘要}
+### 自动截取摘要{@excerptLength:自动截取文章前多少个字为摘要，不配置默认：120字}
 excerptLength: 120
 
-## 当无目录时的显示文字，默认为'无'
-noCategoryText: '无'
+## 代码高亮配置{@highlightTheme: 主题名称,(配置暂时不可用，后续开发中…)}
 
-## 代码高亮配置{@highlightTheme: 主题名称(默认为default)}
-主题名称：[参考网站](https://cdnjs.com/libraries/highlight.js)
-## 常用可配置名称[default,github,foundation,googlecode,monokai-sublime,monokai,monokai,xcode,vs2015,tomorrow,hybrid]
-
-highlightTheme: default 
+highlightTheme: default //TODO
 
 ## 文章过期提醒功能 {@warning:{days:临界天数(默认300天,设置0关闭功能),text:提醒文字/*%d为过期总天数占位符*/}}
 warning:
-  days: 300  
+  days: 300
   text: '本文于%d天之前发表，文中内容可能已经过时。'
-  
-## 添加版权保护{@archiveCopyright: {enable:是否开启,tip:提示信息}}
-archiveCopyright:
+
+## 文章内声明{@declaration: {enable:是否开启,title:声明标题,tip:提示内容}}
+declaration:
   enable: true
-  tip: '商业转载请联系作者获得授权,非商业转载请注明出处 © Snippet'
-
-## 版权声明文字，支持html/text，但不要使用<li>标签
-cc: |-
-      <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
-      知识共享署名-非商业性使用-禁止演绎 3.0 未本地化版本许可协议（CC BY-NC-ND 3.0）
-      </a>
-
-## 过低版本的浏览器提醒文字
-outdated_browser_text: '你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。'
+  title: '转载声明'
+  tip: |-
+      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
 
 
 ## 主题评论
@@ -234,49 +233,67 @@ outdated_browser_text: '你使用的浏览器版本过低，为了你更好的�
 ### gitment
 gitment:
   enable: false
-  owner: 
-  repo: 
-  client_id: 
-  client_secret: 
-  labels: 
-  perPage: 
+  owner:
+  repo:
+  client_id:
+  client_secret:
+  labels:
+  perPage:
   maxCommentHeight:
-  
-### 友言评论(默认选项)
-uyan:
+
+### 来必力(默认选项)
+livere:
   enable: true
-  uyan_id: 
+  livere_uid:
+
+### 友言评论(服务不稳定，经常无法加载)
+uyan:
+  enable: false
+  uyan_id:
+
+### Disqus评论(需要翻墙，或者搭建代理)
+disqus:
+  enable: false
+  shortname: snippet
+  count: false
+
+### 畅言评论(需要ICP备案)
+changyan:
+  enable: false
+  appid:
+  conf:
 
 
 ## 网站访问统计
 
-### 网盟CNZZ统计 参考网站: [网盟CNZZ](http://www.umeng.com/) 
-cnzz_anaylytics: 
+### 网盟CNZZ统计 参考网站: [网盟CNZZ](http://www.umeng.com/)
+cnzz_anaylytics:
 
 ### 百度统计 参考网站: [百度统计](https://tongji.baidu.com/)
-baidu_anaylytics: 
+baidu_anaylytics:
 
-### 百度文章推送  参考网站: [百度站长](http://zhanzhang.baidu.com)  
+### 百度文章推送  参考网站: [百度站长](http://zhanzhang.baidu.com/)
 baidu_push:
 
-### 谷歌统计
-google_anaylytics: 
+### 谷歌统计 参考网站：[谷歌统计](https://www.google-analytics.com/)
+google_anaylytics:
 
+### 腾讯分析 参考网站：[腾讯分析](http://ta.qq.com/)
+tencent_analytics:
 
 ## ICON配置 (不配则启用本地Font Icon)
 fontAwesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
 
 ## 网站主题配置
-since: 2017
-robot: 'all' ### 控制搜索引擎的抓取和索引编制行为，默认为all
-version: 1.1.0
-
+since: 2017  //建站时间
+robot: 'all'  //控制搜索引擎的抓取和索引编制行为，默认为all
+version: 1.2.1  //当前主题版本号
 ```
 
-### 使用技巧
+### 主题使用技巧及功能扩展
 1. 修改新增文章Front-matter模板,修改`scaffolds`目录下的`post.md`模板
 ``` yml
---- 
+---
 title: {{ title }} // 标题
 date: {{ date }}   // 时间
 categories:        // 分类
@@ -286,6 +303,13 @@ img:               // 自定义缩略图
 ---
 ```
 
+2. 启用站内本地搜索功能
+
+如果要使用本地站点搜索，必须安装插件hexo-generator-json-content来创建本地搜索json文件
+```bash
+    npm i hexo-generator-json-content@2.2.0 -S
+```
+然后修改主题配置_config.yml文件下`jsonContent`相关参数。
 
 # **提升篇**
 
@@ -304,10 +328,10 @@ CI即持续集成系统。对个人而言，就是让你的代码在提交到远
 language: node_js #使用Node语言环境
 node_js: stable #安装稳定版Node
 
-sudo: false  
+sudo: false
 
 #cache 启用缓存，加快构建速度
-cache: 
+cache:
   directories:
     - "node_modules"
 
@@ -324,14 +348,14 @@ install:
 
 before_script:
   - export TZ='Asia/Shanghai' #设置时区
-  - npm install -g gulp  #安装Gulp
+  - npm install -g gulp  #全局安装Gulp
   - chmod +x _travis.sh  #授权脚本执行权限
 
 script:
   - hexo clean && hexo g #清除缓存并生成静态文件
   - gulp #执行gulp任务
 
-after_success: #实行成功时(以后扩展功能使用)
+after_success: #执行成功时(以后扩展功能使用)
 
 after_script:
   - ./_travis.sh #执行部署脚本
@@ -351,7 +375,7 @@ env:
 ## 3. 主题开发
 Gulp 执行启用主题二次开发模式
 ``` bash
-    gulp dev 
+    gulp dev
 ```
 会监听样式less或者JS文件的变动。然后执行上面的【主题发布】即可。
 
@@ -366,14 +390,17 @@ Gulp 执行启用主题二次开发模式
 # **其他**
 
 ## 感谢
-
-在设计这款主题的时候参考了好多主题和博客的设计和创意，深表感谢！ 
+在设计这款主题的时候参考了好多主题和博客的设计和创意，深表感谢！
 
 ## 贡献
 接受各种形式的贡献，包括但不限于提交问题或需求，修复代码。
 欢迎大家提Issue或者Pull Request。
 
-如果觉得本主题还不错，==欢迎  [Star](https://github.com/shenliyang/hexo-theme-snippet/stargazers)下==，您的支持和鼓励才是后续更新最大的动力
+如果觉得本主题还不错，== 欢迎  [Star](https://github.com/shenliyang/hexo-theme-snippet/stargazers)下 ==，您的支持和鼓励才是后续更新最大的动力
+
+## 宗旨
+致力主题简洁轻量，力求使用配置方便，不求页面花里胡哨，但求功能简单实用
+
 
 ## 版本更新
 
@@ -385,14 +412,19 @@ Gulp 执行启用主题二次开发模式
 - 重构样式并优化Less文件，方便二次开发和自定义主题样式。
 - 新增 右侧社交边栏 小工具。
 
+### v1.2.0
+- 增加本地搜索和谷歌搜索
+- 增加返回顶部
 
-## 最近更新日志
-- 增加谷歌统计
-- 增加自定义网站宣传语
-- 文章过期提醒增加关闭功能
-- 修复云标签链接 undefinedtag Bug
-- 优化主题代码和主题配置
-- 重构中文README.md文档
+### v1.2.1
+- 去掉highlight.js插件，启用本地高亮
+- 整理归类第三方评论
+
+## 最新提交更新日志
+- 增加首页底部面板开关功能
+- 修改文章标签最多显示3个
+- 优化文章页面上下翻页导航
+- 优化部分样式
 
 
 ## License
