@@ -1,15 +1,20 @@
-# layout -- 布局相关
-# language: zh-CN
+# ---------------------------------------------------------------
+#   Site Information And Theme Configuration Settings
+#   language: zh-CN
+# ---------------------------------------------------------------
 
-## menu 导航菜单显示
+## menu
 menu:
 - page: Spring Cloud|周立
   url: /
   icon: fa-home
+- page: 知识星球
+  url: https://t.zsxq.com/JqFQJ2b
+  icon: fa-heart
 - page: 分类
   url: /categories
   icon: fa-list
-- page: 关于
+- page: 关于我
   url: /about
   icon: fa-user
 - page: 归档
@@ -21,10 +26,11 @@ menu:
 
 
 
-## favicon 
+
+## favicon
 favicon: /favicon.ico
 
-## Feed 
+## Feed
 rss: /atom.xml
 
 
@@ -32,26 +38,39 @@ rss: /atom.xml
 
 ## widgets
 widgets:
-- notification
-- aboutme
-- social
-- category
-- archive
-- tagcloud
-- friends
+  # - stick
+  - search
+  - notification
+  - aboutme
+  - social
+  - category
+  - archive
+  - tagcloud
+  - friends
 
 ## 首页关于我设置
 aboutme:
   image: /icons/wx.jpg
   author: 周立
-  words: 《Spring Cloud与Docker微服务架构实战》作者<br/>Spring4All社区发起人之一
+  words: 《Spring Cloud与Docker微服务架构实战》作者<br/>
+
+## 搜索
+jsonContent:
+  searchLocal: true
+  searchGoogle: false
+  posts:
+    title: true
+    text: true
+    content: true
+    categories: true
+    tags: true
 
 ## 网站公告设置
 notification: |-
             <p>
               <b>笔者微信</b>：jumping_me，欢迎加我<br/>
               <b>公众号</b>：请扫描我的头像<br/>
-              <b>本站主题</b>：<a href="http://github.com/itmuch/hexo-theme-itmuch">下载</a>
+              <b>知识星球</b>：<a href="https://t.zsxq.com/JqFQJ2b">itmuch.com-周立</a>
             </p>
 
 ## 社交设置
@@ -88,91 +107,108 @@ links:
   - EdisonXu's Blog: http://edisonxu.org/
   - 沧海云视频: http://www.ictgu.cn
   - 梁桂钊的博客: http://blog.720ui.com/
+  - 猿天地: http://cxytiandi.com/
 
 
 
 # 主题自定义个性化配置
 
 ## 网站宣传语
-branding: 
+branding:
 
-## 懒加载图片占位符
-placeholder: ./img/loading.gif
+## 设置banner背景图片
+banner:
+    img: http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg
+
+## 首页列表底部面板
+homePanel: true
 
 ## 缩略图自定义随机图片
 defaultImgs:
-  - 
+  -
 
 ## 截取文章首页描述字数
 excerptLength: 240
 
-## 当无分类时显示文字，默认为'无'
-noCategoryText: '无'
-
 ## 代码高亮配置
-highlightTheme: railscasts
+highlightTheme:
+
+## bootstrap配置
+bootstrap:
 
 ## ICON配置
-fontAwesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
+fontAwesome:
 
 ## 文章过期提醒功能
 warning:
   days: 30000
   text: '本文于%d天之前发表，文中内容可能已经过时。'
 
-## 添加版权保护 
-archiveCopyright:
+## 文章内声明
+declaration:
   enable: true
+  title: '转载声明'
   tip: '本博客由周立创作，采用
     <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
     CC BY 3.0 CN
     </a>
     许可协议。可自由转载、引用，但需署名作者且注明文章出处。如转载至微信公众号，请在文末添加作者公众号二维码。'
 
-## 过低版本的浏览器提醒文字
-outdated_browser_text: '你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。'
-
 
 ## 主题评论
+
 ### gitment
 gitment:
   enable: false
-  owner: 
-  repo: 
-  client_id: 
-  client_secret: 
+  owner:
+  repo:
+  client_id:
+  client_secret:
   perPage: 10
 
+### 来必力
+livere:
+  enable: false
+  livere_uid: MTAyMC8zMzA1MS85NjEz
 
-### 友言评论
+### 友言评论(服务不稳定)
 uyan:
-  enable: true
-  uyan_id: 905617
+  enable: false
+  uyan_id: 1966422
 
+### Disqus评论
+disqus:
+  enable: false
+  shortname: snippet
+  count: false
+
+### 畅言评论(需要ICP备案)
+changyan:
+  enable: true
+  appid: cyt8KmUC1
+  conf: prod_855a68d3b3d91855360a6215672a505a
 
 ## 网站访问统计
 
 ### 网盟CNZZ统计
-# cnzz_anaylytics: 1263868967
+cnzz_analytics: 
 
 ### 百度统计
-baidu_anaylytics: 13766878cde148282622871dd245a973
+baidu_analytics: 13766878cde148282622871dd245a973
 
 ### 谷歌统计
-google_anaylytics: 
+google_analytics:
+
+### 腾讯分析
+tencent_analytics:
 
 ### 百度文章推送
 baidu_push:
 
 #网站主题配置
-since: 2016
+since: 2017
 robot: 'all' ### 控制搜索引擎的抓取和索引编制行为，默认为all
-version: 1.1.0
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
+version: 1.2.1
 # 是否开启fork me on github
 fork_me_on_github:
   enabled: true

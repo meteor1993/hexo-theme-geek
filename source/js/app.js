@@ -9,7 +9,20 @@ window.onload = function() {
         $ajaxImgs = document.querySelectorAll('.img-ajax'), //图片懒加载
         $commentsCounter = document.getElementById('comments-count'),
         $gitcomment = document.getElementById("gitcomment"),
-        scrollTimer = null;
+        $backToTop = document.getElementById("back-to-top"),
+        timer = null;
+
+    //设备判断
+    var isPC = true;
+    (function(designPercent) {
+        function params(u, p) {
+            var m = new RegExp("(?:&|/?)" + p + "=([^&$]+)").exec(u);
+            return m ? m[1] : '';
+        }
+        if (/iphone|ios|android|ipod/i.test(navigator.userAgent.toLowerCase()) == true && params(location.search, "from") != "mobile") {
+            isPC = false;
+        } 
+    })();
 
     //手机菜单导航
     $mnav.onclick = function(){  
@@ -20,26 +33,6 @@ window.onload = function() {
             $mainMenu.setAttribute("class","collapse navbar-collapse in");
         }
     };
-
-    //设备判断
-    var isPC = true;
-    (function(designPercent) {
-        function params(u, p) {
-            var m = new RegExp("(?:&|/?)" + p + "=([^&$]+)").exec(u);
-            return m ? m[1] : '';
-        }
-        if (/iphone|ios|android|ipod/i.test(navigator.userAgent.toLowerCase()) == true && params(location.search, "from") != "mobile") {
-            var mainWidth = document.body.clientWidth;
-            var fontSize = mainWidth / designPercent + 'px';
-            document.documentElement.style.fontSize = fontSize;
-            window.onresize = function() {
-                var mainWidth = document.body.clientWidth;
-                fontSize = mainWidth / designPercent + 'px';
-                document.documentElement.style.fontSize = fontSize;
-            };
-            isPC = false;
-        } else document.documentElement.style.fontSize = '610%';
-    })(450 / 100);
 
     //首页文章图片懒加载
     function imgsAjax($targetEles) {
@@ -69,6 +62,7 @@ window.onload = function() {
             }
         }
     }
+
     //获取滚动高度
     function getScrollTop() {
         return ($body.scrollTop || document.documentElement.scrollTop);
@@ -78,16 +72,31 @@ window.onload = function() {
         if ($process) {
             $process.style.width = (getScrollTop() / ($body.scrollHeight - window.innerHeight)) * 100 + "%";
         }
-        
+        (isPC && getScrollTop() >= 300) ? $backToTop.removeAttribute("class","hide") : $backToTop.setAttribute("class","hide");
         imgsAjax($ajaxImgs);
-        
     };
     scrollCallback();
+
     //监听滚动事件
     window.addEventListener('scroll', function() {
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(function() {
+        clearTimeout(timer);
+        timer = setTimeout(function fn() {
             scrollCallback();
-        }, 100);
+        }, 200);
     });
+
+    //返回顶部
+	$backToTop.onclick = function() {
+	    cancelAnimationFrame(timer);
+	    timer = requestAnimationFrame(function fn() {
+	        var sTop = getScrollTop();
+	        if (sTop > 0) {
+	            $body.scrollTop = document.documentElement.scrollTop = sTop - 50;
+	            timer = requestAnimationFrame(fn);
+	        } else {
+	            cancelAnimationFrame(timer);
+	        }
+	    });
+	};
+
 };
