@@ -8,9 +8,6 @@ menu:
 - page: Spring Cloud|周立
   url: /
   icon: fa-home
-- page: 知识星球
-  url: https://t.zsxq.com/JqFQJ2b
-  icon: fa-heart
 - page: 分类
   url: /categories
   icon: fa-list
@@ -20,11 +17,6 @@ menu:
 - page: 归档
   url: /archives
   icon: fa-archive
-- page: 标签
-  url: /tags
-  icon: fa-tag
-
-
 
 
 ## favicon
@@ -33,18 +25,21 @@ favicon: /favicon.ico
 ## Feed
 rss: /atom.xml
 
+## Carousel
+carousel:
+  img: 
+  url: 
 
 # 各个小工具的设置
 
 ## widgets
 widgets:
-  # - stick
   - search
   - notification
   - aboutme
   - social
   - category
-  - archive
+  # - archive
   - tagcloud
   - friends
 
@@ -70,7 +65,6 @@ notification: |-
             <p>
               <b>笔者微信</b>：jumping_me，欢迎加我<br/>
               <b>公众号</b>：请扫描我的头像<br/>
-              <b>知识星球</b>：<a href="https://t.zsxq.com/JqFQJ2b">itmuch.com-周立</a>
             </p>
 
 ## 社交设置
@@ -96,19 +90,29 @@ cate_config:
 ## 文章归档设置
 arch_config:
    type: 'monthly'
+   format: 'YYYY年MM月'
    show_count: true
    order: -1
 
+## 标签云设置
+tagcloud:
+  tag3d: false
+  textColour: '#444'
+  outlineMethod: 'block'
+  outlineColour: '#FFDAB9'
+  interval: 30
+  freezeActive: true
+  frontSelect: true
+  reverse: true
+  wheelZoom: false
+
 ## 友链设置
 links:
-  - 大数据: https://www.feel88.cn/
   - 程序猿DD|翟永超: http://blog.didispace.com/
   - 泥瓦匠的博客: http://www.bysocket.com/
   - EdisonXu's Blog: http://edisonxu.org/
-  - 沧海云视频: http://www.ictgu.cn
   - 梁桂钊的博客: http://blog.720ui.com/
   - 猿天地: http://cxytiandi.com/
-
 
 
 # 主题自定义个性化配置
@@ -118,7 +122,7 @@ branding:
 
 ## 设置banner背景图片
 banner:
-    img: http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg
+    img: 
 
 ## 首页列表底部面板
 homePanel: true
@@ -129,6 +133,9 @@ defaultImgs:
 
 ## 截取文章首页描述字数
 excerptLength: 240
+
+## 是否开启文章目录
+toc: false
 
 ## 代码高亮配置
 highlightTheme:
@@ -154,16 +161,21 @@ declaration:
     </a>
     许可协议。可自由转载、引用，但需署名作者且注明文章出处。如转载至微信公众号，请在文末添加作者公众号二维码。'
 
+## 文章打赏
+reward:
+  alipay: ''
+  wepay: ''
+  tip: 
 
 ## 主题评论
 
 ### gitment
 gitment:
-  enable: false
+  enable: true
   owner:
-  repo:
-  client_id:
-  client_secret:
+  repo: https://github.com/itmuch/hexo-itmuch-comment.git
+  client_id: d7e519da38702d1a89c7
+  client_secret: 9855c6abfbe45feedfc57168ff50ca7848bb88c4
   perPage: 10
 
 ### 来必力
@@ -184,11 +196,28 @@ disqus:
 
 ### 畅言评论(需要ICP备案)
 changyan:
-  enable: true
-  appid: cyt8KmUC1
-  conf: prod_855a68d3b3d91855360a6215672a505a
+  enable: false
+  appid:
+  conf:
 
-## 网站访问统计
+## Valine评论
+valine:
+   enable: false
+   appId: xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz
+   appKey: erIpQac4azoCmgfBB7Dl9maa
+   placeholder: 说点什么吧
+   notify: false
+   verify: false
+   avatar: mm
+   meta: nick,mail
+   pageSize: 10
+
+## 网站访客统计
+visit_counter:
+   site: true
+   page: true
+
+## 网站访问统计分析
 
 ### 网盟CNZZ统计
 cnzz_analytics: 
@@ -202,11 +231,14 @@ google_analytics:
 ### 腾讯分析
 tencent_analytics:
 
-### 百度文章推送
-baidu_push:
+### 百度站点认证
+baidu_site_verification:
+
+### 百度自动推送
+baidu_push: false
 
 #网站主题配置
-since: 2017
+since: 2016
 robot: 'all' ### 控制搜索引擎的抓取和索引编制行为，默认为all
 version: 1.2.1
 # 是否开启fork me on github

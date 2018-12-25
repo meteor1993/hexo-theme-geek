@@ -12,11 +12,9 @@
 	        <div class="post-body">
 	        <% site.categories.forEach(function (item) {%>
 	            <li class="post-items" >
-	                
-	                    <a href="<%- item.href%>" title="<%- item.name%>" target="_blank">
+	                    <a href="/<%- item.path%>" title="<%- item.name%>" target="_blank">
 	                        <%- item.name%>
 	                    </a>
-	                
 	            </li>
 	        <%})%>
 	        </div>
