@@ -1,3 +1,20 @@
+<% if (theme.ad.innerBanner && theme.ad.innerBanner.length){ %>
+    <div class="ad">
+        <div class="row">
+            <% theme.ad.innerBanner.forEach(function (item) { %>
+                <div class="col-md-<%= 12 / theme.ad.innerBanner.length %>">
+                    <a href="<%= item.targetUrl %>" rel="nofollow" target="_blank">
+                        <img class="img-responsive center-block"
+                             src="<%= item.imgUrl %>"
+                             title="<%= item.title %>"
+                        >
+                    </a>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+<% } %>
+
 <p id="process"></p>
 <article class="post">
     <div class="post-head">
@@ -21,7 +38,9 @@
     </div>
     <%- partial('_partial/gallery', {post: page}) %>
     <div class="post-body post-content">
+        <%- partial('_partial/toc', null, {cache:false}) %>
         <%- page.content %>
+        <%- related_posts(page, site.posts) %>
     </div>
     <% if(theme.reward.alipay || theme.reward.wepay){ %>
         <%- partial('_partial/reward') %>
@@ -29,7 +48,7 @@
     <div class="post-footer">
         <div class="col-sm-10">
             <div>
-                <b>本文链接</b>：<a href="<%- url_for(page.path) %>"><%- page.title %></a>
+                <b>本文链接</b>：<a href="<%- url_for(page.path) %>" target="_blank"><%- page.title %></a>
             </div>
             <div>
                 <% if(theme.declaration.enable){ %>
@@ -43,20 +62,22 @@
             </div>
         </div>
         <div class="col-sm-2">
-            <img src="<%- theme.aboutme.image %>" width=100%/>
+            <img src="/icons/wx.jpg" width=100%/>
         </div>
     </div>
 </article>
 
 <div class="article-nav prev-next-wrap clearfix">
     <% if(page.prev){ %>
-        <a href="<%- url_for(page.prev.path) %>" class="pre-post btn btn-default" title='<%- page.prev.title %>'>
+        <a target="_blank" href="<%- url_for(page.prev.path) %>" class="pre-post btn btn-default"
+           title='<%- page.prev.title %>'>
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
             <span class="hidden-xs"><%- page.prev.title %></span>
         </a>
     <% } %>
     <% if(page.next){ %>
-        <a href="<%- url_for(page.next.path) %>" class="next-post btn btn-default" title='<%- page.next.title %>'>
+        <a target="_blank" href="<%- url_for(page.next.path) %>" class="next-post btn btn-default"
+           title='<%- page.next.title %>'>
             <span class="hidden-lg">下一篇</span>
             <span class="hidden-xs"><%- page.next.title %></span><i class="fa fa-angle-right fa-fw"></i>
         </a>
@@ -68,6 +89,7 @@
         <%- partial('_vendor/comments/index', {page: page}) %>
     </div>
 <% } %>
+
 
 
 

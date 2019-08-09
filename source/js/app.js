@@ -25,16 +25,6 @@ window.onload = function() {
         }
     })();
 
-    //手机菜单导航
-    $mnav.onclick = function(){
-        var navOpen = $mainMenu.getAttribute("class");
-        if(navOpen.indexOf("in") != '-1'){
-            $mainMenu.setAttribute("class","collapse navbar-collapse");
-        } else {
-            $mainMenu.setAttribute("class","collapse navbar-collapse in");
-        }
-    };
-
     //首页文章图片懒加载
     function imgsAjax($targetEles) {
         if (!$targetEles) return;

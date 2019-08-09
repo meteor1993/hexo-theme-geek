@@ -2,13 +2,19 @@
 
 > 说明：本主题在<https://github.com/shenliyang/hexo-theme-snippet> 的基础上进行二次开发，主要做了以下改进：
 >
-> 1. 修正原主题 `/tags` 、`/categories` 、`/archive` 、`/about` 页面显示不正确的问题；
-> 2. 修改部分样式，主要是页头与右边侧边栏
-> 3. 添加了本地搜索的能力。
+> * 修正原主题 `/tags` 、`/categories` 、`/archive` 、`/about` 页面显示不正确的问题；
+> * 样式调整：
+>   * 本地搜索、侧边栏、色调...N多改进
+> * 新增了两款Widget
+> * 支持广告位
+> * 导航栏支持二级菜单
+> * 文章内容TOC改进
 >
-> 在二次开发的过程中，也部分参考了<https://github.com/wiliam2015/hexo-theme-snippet> 的代码。
+> 在二次开发的过程中，也部分参考了 <https://github.com/wiliam2015/hexo-theme-snippet> 的代码。
 >
 > **欢迎大家Star、Fork、提意见、喷。**
+
+--------
 
 ITMuch 简洁而不简单，也许是一款你寻找已久的hexo主题。
 
@@ -22,7 +28,11 @@ ITMuch 简洁而不简单，也许是一款你寻找已久的hexo主题。
 
 [主题预览 Demo](http://www.itmuch.com) 
 
-![preview-1](images/1.png)
+![preview-1](images/1.jpg)
+
+![preview-1](images/2.jpg)
+
+![preview-1](images/3.jpg)
 
 ## 主题特点
 

@@ -1,10 +1,10 @@
-<aside id="article-toc" role="navigation" class="col-md-4">
-    <div class="widget">
-        <h3 class="title"><%= __('toc') %></h3>
-        <% if(toc(page.content)){ %>
-            <%- toc(page.content,{list_number:false}) %>
-        <% } else { %>
-            <p>暂无目录</p>
-        <% } %>
+<% if(theme.toc && toc(page.content)){ %>
+    <div class="toc-article">
+        <strong>
+            <%= __('toc') %>
+        </strong>
+        <div class="toc-content">
+            <%- toc(page.content, {list_number: false}) %>
+        </div>
     </div>
-</aside>
+<% } %>

@@ -20,16 +20,16 @@
 <article class="post">
     <% if(_photoUrl) {%>
         <div class="post-media">
-            <a href="<%- url_for(post.path) %>">
+            <a target="_blank" href="<%- url_for(post.path) %>">
                 <img class="img-ajax" src="<%- url_for('/img/loading.gif') %>"  data-src="<%- url_for(_photoUrl) %>"   alt="<%- post.title %>">
             </a>
         </div>
     <% } %>
     <div class="post-content">
         <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="<%- url_for(post.path) %>"><%- post.title %></a>
-            </h1>
+            <h3 class="post-title">
+                <a href="<%- url_for(post.path) %>" target="_blank"><%- post.title %></a>
+            </h3>
             <div class="post-meta">  &bull;
                 <time class="post-date" datetime="" title="">
                     <%- date(post.date,"YYYY年MM月DD日") %>
@@ -51,7 +51,7 @@
             </div>
 
             <div class="post-permalink">
-                <a href="<%- url_for(post.path) %>" class="btn btn-default"><%= __('read_more') %></a>
+                <a target="_blank" href="<%- url_for(post.path) %>" class="btn btn-default"><%= __('read_more') %></a>
             </div>
         </footer>
     <% } %>

@@ -5,94 +5,114 @@
 
 ## menu
 menu:
-- page: Spring Cloud|周立
-  url: /
-  icon: fa-home
-- page: 分类
-  url: /categories
-  icon: fa-list
-- page: 关于我
-  url: /about
-  icon: fa-user
-- page: 归档
-  url: /archives
-  icon: fa-archive
-
+  - page: 关于我
+    url: /about
+    icon: fa-user
+  - page: 归档
+    url: /archives
+    icon: fa-archive
+  - page: 系列课程
+    icon: fa-fire
+    subPages:
+      - page: Docker系列教程
+        url: /docker/00-docker-lession-index
+      - page: Spring Cloud系列教程
+        url: /spring-cloud/spring-cloud-index
+      - page: Spring Boot系列教程
+        url: /spring-boot/spring-boot-index
+  - page: 开源书
+    icon: fa-book
+    subPages:
+      - page: RocketMQ开发者指南
+        url: /books/rocketmq
+        icon: fa-rocket
+  - page: 工具
+    icon: fa-cog
+    subPages:
+      - page: 微信排版工具1.0
+        url: /tools/markdown
+      - page: 微信排版工具2.0
+        url: /tools/markdown2
 
 ## favicon
-favicon: /favicon.ico
+favicon: /favicon.jpg
 
 ## Feed
 rss: /atom.xml
 
 ## Carousel
 carousel:
-  img: 
-  url: 
+  img:
+  url:
 
 # 各个小工具的设置
 
 ## widgets
 widgets:
-  - search
-  - notification
   - aboutme
-  - social
+  - ad
+  - series
   - category
-  # - archive
   - tagcloud
   - friends
+  # - notification
+  # - social
+  # - archive
 
-## 首页关于我设置
-aboutme:
-  image: /icons/wx.jpg
-  author: 周立
-  words: 《Spring Cloud与Docker微服务架构实战》作者<br/>
+# 广告位
+ad:
+  # 首页侧边栏广告位
+  sidebar:
+    title: 百度
+    targetUrl: https://coding.imooc.com/class/358.html
+    imgUrl: /icons/imooc.jpg
+  # 内页页头banner广告位
+  innerBanner:
+    - title: 百度
+      targetUrl: http://www.javacto.cn/tuling/?=zhouli
+      imgUrl: /icons/tuling2.png
 
 ## 搜索
 jsonContent:
   searchLocal: true
   searchGoogle: false
-  posts:
-    title: true
-    text: true
-    content: true
-    categories: true
-    tags: true
 
 ## 网站公告设置
-notification: |-
-            <p>
-              <b>笔者微信</b>：jumping_me，欢迎加我<br/>
-              <b>公众号</b>：请扫描我的头像<br/>
-            </p>
+#notification: |-
+#            <p>
+#              <b>笔者微信</b>：jumping_me，欢迎加我<br/>
+#              <b>公众号</b>：请扫描我的头像<br/>
+#            </p>
 
-## 社交设置
+## 社交设置a
 social:
- - name: GitHub
-   icon: github
-   href: //github.com/eacdy
- - name: Git@OSC
-   icon: git
-   href: //gitee.com/itmuch
- - name: 邮箱
-   icon: envelope-o
-   href: mailto:eacdy0000@126.com
- - name: RSS
-   icon: feed
-   href: /atom.xml
+  - name: GitHub
+    icon: github
+    href: //github.com/eacdy
+  - name: Gitee
+    icon: git
+    href: //gitee.com/itmuch
+  - name: 邮箱
+    icon: envelope-o
+    href: mailto:eacdy0000@126.com
+  - name: 慕课网
+    icon: book
+    href: //coding.imooc.com/class/358.html
+  - name: RSS
+    icon: feed
+    href: /atom.xml
 
 ## 文章分类设置
 cate_config:
-   show_count: true
-   show_current: true
+  show_count: true
+  show_current: true
 
 ## 文章归档设置
 arch_config:
-   type: 'monthly'
-   format: 'YYYY年MM月'
-   show_count: true
-   order: -1
+  type: 'monthly'
+  format: 'YYYY年MM月'
+  show_count: true
+  order: -1
 
 ## 标签云设置
 tagcloud:
@@ -110,9 +130,14 @@ tagcloud:
 links:
   - 程序猿DD|翟永超: http://blog.didispace.com/
   - 泥瓦匠的博客: http://www.bysocket.com/
-  - EdisonXu's Blog: http://edisonxu.org/
   - 梁桂钊的博客: http://blog.720ui.com/
   - 猿天地: http://cxytiandi.com/
+  - 二丫讲梵: http://eryajf.net/
+  - ANOYI轻量级微服务架构: https://anoyi.com
+  - python教程: https://www.yuanrenxue.com/
+  - 京东资深SRE工程师: http://www.liangsonghua.me
+  - 王欣的博客: https://wangxin.io/
+  - PM的AI知识库: https://easyai.tech/
 
 
 # 主题自定义个性化配置
@@ -122,7 +147,7 @@ branding:
 
 ## 设置banner背景图片
 banner:
-    img: 
+  img:
 
 ## 首页列表底部面板
 homePanel: true
@@ -131,11 +156,11 @@ homePanel: true
 defaultImgs:
   -
 
-## 截取文章首页描述字数
+  ## 截取文章首页描述字数
 excerptLength: 240
 
 ## 是否开启文章目录
-toc: false
+toc: true
 
 ## 代码高亮配置
 highlightTheme:
@@ -165,34 +190,21 @@ declaration:
 reward:
   alipay: ''
   wepay: ''
-  tip: 
+  tip: 赞赏是不耍流氓的鼓励
 
 ## 主题评论
 
-### gitment
-gitment:
-  enable: true
-  owner:
-  repo: https://github.com/itmuch/hexo-itmuch-comment.git
-  client_id: d7e519da38702d1a89c7
-  client_secret: 9855c6abfbe45feedfc57168ff50ca7848bb88c4
-  perPage: 10
-
-### 来必力
-livere:
+## Valine评论
+valine:
   enable: false
-  livere_uid: MTAyMC8zMzA1MS85NjEz
-
-### 友言评论(服务不稳定)
-uyan:
-  enable: false
-  uyan_id: 1966422
-
-### Disqus评论
-disqus:
-  enable: false
-  shortname: snippet
-  count: false
+  appId: xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz
+  appKey: erIpQac4azoCmgfBB7Dl9maa
+  placeholder: 说点什么吧
+  notify: false
+  verify: false
+  avatar: mm
+  meta: nick,mail
+  pageSize: 10
 
 ### 畅言评论(需要ICP备案)
 changyan:
@@ -200,27 +212,52 @@ changyan:
   appid:
   conf:
 
-## Valine评论
-valine:
-   enable: false
-   appId: xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz
-   appKey: erIpQac4azoCmgfBB7Dl9maa
-   placeholder: 说点什么吧
-   notify: false
-   verify: false
-   avatar: mm
-   meta: nick,mail
-   pageSize: 10
+### 来必力
+livere:
+  enable: false
+  livere_uid: MTAyMC8zMzA1MS85NjEz
+
+## Gitalk评论
+gitalk:
+  enable: false
+  clientID:
+  clientSecret:
+  repo:
+  owner:
+  admin:
+  perPage:
+  distractionFreeMode: true
+
+### Disqus评论
+disqus:
+  enable: false
+  shortname: snippet
+  count: false
+
+### gitment评论(长期不更新，不建议使用)
+gitment:
+  enable: false
+  owner:
+  repo:
+  client_id:
+  client_secret:
+  perPage: 10
+
+### 友言评论(服务不稳定)
+uyan:
+  enable: false
+  uyan_id: 1966422
+
 
 ## 网站访客统计
 visit_counter:
-   site: true
-   page: true
+  site: true
+  page: true
 
 ## 网站访问统计分析
 
 ### 网盟CNZZ统计
-cnzz_analytics: 
+cnzz_analytics:
 
 ### 百度统计
 baidu_analytics: 13766878cde148282622871dd245a973
@@ -238,9 +275,10 @@ baidu_site_verification:
 baidu_push: false
 
 #网站主题配置
-since: 2016
+since: 2017
 robot: 'all' ### 控制搜索引擎的抓取和索引编制行为，默认为all
-version: 1.2.1
+version: 1.2.3
+
 # 是否开启fork me on github
 fork_me_on_github:
   enabled: true

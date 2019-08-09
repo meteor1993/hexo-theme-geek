@@ -2,7 +2,7 @@
 <% if(page.keywords){ %>
     <meta name="keywords" content="{{ page.keywords }}" />
 <% } else if(page.tags && page.tags.length) { %>
-    <meta name="keywords" content="<% page.tags.forEach(function (item) {%><%- item.name%>,<%})%>" />
+    <meta name="keywords" content="<% page.tags.forEach(function (item,index) { %><%= item.name%><% if(index + 1 != page.tags.length){%>,<%}%><% }) %>" />
 <% } else{ %>
     <meta name="keywords" content="<%= config.keywords%>" />
 <%}%>
@@ -11,6 +11,7 @@
 <% } else{ %>
     <meta name="description" content="<%= config.description%>" />
 <%}%>
+
 <% var robotMeta = theme.robot||'all'; %>
 <meta name="robots" content="<%= robotMeta%>" />
 <meta name="google" content="<%= robotMeta%>" />

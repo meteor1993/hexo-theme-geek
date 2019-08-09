@@ -1,4 +1,7 @@
-<% if(theme.jsonContent.searchLocal && !is_post()){ %>
+<%- js('js/jquery.min.js') %>
+<%- js('js/bootstrap.min.js') %>
+<%- js('js/bootstrap-hover-dropdown.min.js') %>
+<% if(theme.jsonContent.searchLocal){ %>
 	<%- js('js/search.js?rev=@@hash') %>
 <% } %>
 
@@ -31,3 +34,4 @@
 <% } %>
 
 <%- js('js/app.js?rev=@@hash') %>
+
