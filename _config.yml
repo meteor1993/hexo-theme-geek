@@ -5,34 +5,37 @@
 
 ## menu
 menu:
+  - page: 首页
+    url: /
+    icon: fa-home
   - page: 关于我
     url: /about
     icon: fa-user
   - page: 归档
     url: /archives
     icon: fa-archive
-  - page: 系列课程
-    icon: fa-fire
-    subPages:
-      - page: Docker系列教程
-        url: /docker/00-docker-lession-index
-      - page: Spring Cloud系列教程
-        url: /spring-cloud/spring-cloud-index
-      - page: Spring Boot系列教程
-        url: /spring-boot/spring-boot-index
-  - page: 开源书
-    icon: fa-book
-    subPages:
-      - page: RocketMQ开发者指南
-        url: /books/rocketmq
-        icon: fa-rocket
-  - page: 工具
-    icon: fa-cog
-    subPages:
-      - page: 微信排版工具1.0
-        url: /tools/markdown
-      - page: 微信排版工具2.0
-        url: /tools/markdown2
+  # - page: 系列课程
+  #   icon: fa-fire
+  #   subPages:
+  #     - page: Docker系列教程
+  #       url: /docker/00-docker-lession-index
+  #     - page: Spring Cloud系列教程
+  #       url: /spring-cloud/spring-cloud-index
+  #     - page: Spring Boot系列教程
+  #       url: /spring-boot/spring-boot-index
+  # - page: 开源书
+  #   icon: fa-book
+  #   subPages:
+  #     - page: RocketMQ开发者指南
+  #       url: /books/rocketmq
+  #       icon: fa-rocket
+  # - page: 工具
+  #   icon: fa-cog
+  #   subPages:
+  #     - page: 微信排版工具1.0
+  #       url: /tools/markdown
+  #     - page: 微信排版工具2.0
+  #       url: /tools/markdown2
 
 ## favicon
 favicon: /favicon.jpg
@@ -51,7 +54,7 @@ carousel:
 widgets:
   - aboutme
   - ad
-  - series
+  # - series
   - category
   - tagcloud
   - friends
@@ -63,14 +66,14 @@ widgets:
 ad:
   # 首页侧边栏广告位
   sidebar:
-    title: 百度
-    targetUrl: https://coding.imooc.com/class/358.html
-    imgUrl: /icons/imooc.jpg
+    title: 腾讯云
+    targetUrl: https://cloud.tencent.com/act/cps/redirect?redirect=1044&cps_key=93fe850c571821bb49a3529841c3a1cc&from=console
+    imgUrl: /img/tengxunyun.jpg
   # 内页页头banner广告位
   innerBanner:
-    - title: 百度
-      targetUrl: http://www.javacto.cn/tuling/?=zhouli
-      imgUrl: /icons/tuling2.png
+    - title: 腾讯云
+      targetUrl: https://cloud.tencent.com/act/cps/redirect?redirect=1044&cps_key=93fe850c571821bb49a3529841c3a1cc&from=console
+      imgUrl: /img/tengxunyuntop.jpg
 
 ## 搜索
 jsonContent:
@@ -88,16 +91,16 @@ jsonContent:
 social:
   - name: GitHub
     icon: github
-    href: //github.com/eacdy
-  - name: Gitee
-    icon: git
-    href: //gitee.com/itmuch
+    href: //github.com/meteor1993
+  # - name: Gitee
+  #   icon: git
+  #   href: //gitee.com/itmuch
   - name: 邮箱
     icon: envelope-o
-    href: mailto:eacdy0000@126.com
-  - name: 慕课网
-    icon: book
-    href: //coding.imooc.com/class/358.html
+    href: mailto:inwsy@hotmail.com
+  # - name: 慕课网
+  #   icon: book
+  #   href: //coding.imooc.com/class/358.html
   - name: RSS
     icon: feed
     href: /atom.xml
@@ -116,8 +119,8 @@ arch_config:
 
 ## 标签云设置
 tagcloud:
-  tag3d: false
-  textColour: '#444'
+  tag3d: true
+  textColour: '#29afec'
   outlineMethod: 'block'
   outlineColour: '#FFDAB9'
   interval: 30
@@ -128,22 +131,22 @@ tagcloud:
 
 ## 友链设置
 links:
-  - 程序猿DD|翟永超: http://blog.didispace.com/
-  - 泥瓦匠的博客: http://www.bysocket.com/
-  - 梁桂钊的博客: http://blog.720ui.com/
-  - 猿天地: http://cxytiandi.com/
-  - 二丫讲梵: http://eryajf.net/
-  - ANOYI轻量级微服务架构: https://anoyi.com
-  - python教程: https://www.yuanrenxue.com/
-  - 京东资深SRE工程师: http://www.liangsonghua.me
-  - 王欣的博客: https://wangxin.io/
-  - PM的AI知识库: https://easyai.tech/
+  # - 程序猿DD|翟永超: http://blog.didispace.com/
+  # - 泥瓦匠的博客: http://www.bysocket.com/
+  # - 梁桂钊的博客: http://blog.720ui.com/
+  # - 猿天地: http://cxytiandi.com/
+  # - 二丫讲梵: http://eryajf.net/
+  # - ANOYI轻量级微服务架构: https://anoyi.com
+  # - python教程: https://www.yuanrenxue.com/
+  # - 京东资深SRE工程师: http://www.liangsonghua.me
+  # - 王欣的博客: https://wangxin.io/
+  # - PM的AI知识库: https://easyai.tech/
 
 
 # 主题自定义个性化配置
 
 ## 网站宣传语
-branding:
+branding: 分享技术，感悟人生
 
 ## 设置banner背景图片
 banner:
@@ -157,13 +160,13 @@ defaultImgs:
   -
 
   ## 截取文章首页描述字数
-excerptLength: 240
+excerptLength: 120
 
 ## 是否开启文章目录
 toc: true
 
 ## 代码高亮配置
-highlightTheme:
+highlightTheme: true
 
 ## bootstrap配置
 bootstrap:
@@ -180,7 +183,7 @@ warning:
 declaration:
   enable: true
   title: '转载声明'
-  tip: '本博客由周立创作，采用
+  tip: '本博客由极客挖掘机创作，采用
     <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
     CC BY 3.0 CN
     </a>
@@ -257,29 +260,29 @@ visit_counter:
 ## 网站访问统计分析
 
 ### 网盟CNZZ统计
-cnzz_analytics:
+cnzz_analytics: 1277980864
 
 ### 百度统计
-baidu_analytics: 13766878cde148282622871dd245a973
+baidu_analytics: e0be553f264f09013e966c480c65dd5d
 
 ### 谷歌统计
 google_analytics:
 
 ### 腾讯分析
-tencent_analytics:
+tencent_analytics: 66467762
 
 ### 百度站点认证
 baidu_site_verification:
 
 ### 百度自动推送
-baidu_push: false
+baidu_push: true
 
 #网站主题配置
-since: 2017
+since: 2019
 robot: 'all' ### 控制搜索引擎的抓取和索引编制行为，默认为all
-version: 1.2.3
+version: 1.0.0
 
 # 是否开启fork me on github
 fork_me_on_github:
   enabled: true
-  url: http://github.com/eacdy
+  url: http://github.com/meteor1993

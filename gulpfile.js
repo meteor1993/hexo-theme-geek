@@ -17,7 +17,7 @@
         path = require('path'),
         paths = {
             root: './',
-            source: './themes/hexo-theme-itmuch/source/' //主题下原文件
+            source: './themes/hexo-theme-geek/source/' //主题下原文件
         }
 
     /*====================================================
