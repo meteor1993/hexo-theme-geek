@@ -11,6 +11,15 @@ menu:
   - page: 关于我
     url: /about
     icon: fa-user
+  - page: Spring Cloud
+    icon: fa-fire
+    subPages:
+      - page: Spring Cloud
+        url: /categories/SpringCloud
+      - page: Spring Cloud Alibaba
+        url: /categories/SpringCloud/SpringCloudAlibaba
+      # - page: Spring Boot系列教程
+      #   url: /spring-boot/spring-boot-index
   - page: 归档
     url: /archives
     icon: fa-archive
