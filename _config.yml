@@ -17,9 +17,19 @@ menu:
       - page: Spring Cloud
         url: /categories/SpringCloud
       - page: Spring Cloud Alibaba
-        url: /categories/SpringCloud/SpringCloudAlibaba
+        url: /categories/SpringCloudAlibaba
       # - page: Spring Boot系列教程
       #   url: /spring-boot/spring-boot-index
+  - page: Spring Boot
+    url: /categories/SpringBoot/
+    icon: fa-heart
+  - page: Python
+    icon: fa-star
+    subPages:
+      - page: Python 基础
+        url: /tags/Python-基础/
+      - page: Python 爬虫
+        url: /tags/Python-爬虫/
   - page: 归档
     url: /archives
     icon: fa-archive
@@ -63,25 +73,25 @@ carousel:
 widgets:
   - aboutme
   - ad
-  # - series
+  - series
   - category
   - tagcloud
   - friends
   # - notification
   # - social
-  # - archive
+  - archive
 
 # 广告位
 ad:
   # 首页侧边栏广告位
   sidebar:
     title: 腾讯云
-    targetUrl: https://cloud.tencent.com/act/cps/redirect?redirect=1044&cps_key=93fe850c571821bb49a3529841c3a1cc&from=console
+    targetUrl: https://cloud.tencent.com/act/cps/redirect?redirect=1048&cps_key=93fe850c571821bb49a3529841c3a1cc&from=console
     imgUrl: /img/tengxunyun.jpg
   # 内页页头banner广告位
   innerBanner:
     - title: 腾讯云
-      targetUrl: https://cloud.tencent.com/act/cps/redirect?redirect=1044&cps_key=93fe850c571821bb49a3529841c3a1cc&from=console
+      targetUrl: https://cloud.tencent.com/act/cps/redirect?redirect=1048&cps_key=93fe850c571821bb49a3529841c3a1cc&from=console
       imgUrl: /img/tengxunyuntop.jpg
 
 ## 搜索
@@ -101,9 +111,9 @@ social:
   - name: GitHub
     icon: github
     href: //github.com/meteor1993
-  # - name: Gitee
-  #   icon: git
-  #   href: //gitee.com/itmuch
+  - name: Gitee
+    icon: git
+    href: //gitee.com/inwsy
   - name: 邮箱
     icon: envelope-o
     href: mailto:inwsy@hotmail.com
@@ -209,8 +219,8 @@ reward:
 ## Valine评论
 valine:
   enable: false
-  appId: xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz
-  appKey: erIpQac4azoCmgfBB7Dl9maa
+  appId: v4LucTmYP6UILrIu1pzb2KFG-9Nh9j0Va
+  appKey: dDifHMVdvzOlU9NqKzxLAJRE
   placeholder: 说点什么吧
   notify: false
   verify: false
@@ -278,7 +288,7 @@ baidu_analytics: e0be553f264f09013e966c480c65dd5d
 google_analytics:
 
 ### 腾讯分析
-tencent_analytics: 66467762
+tencent_analytics: 
 
 ### 百度站点认证
 baidu_site_verification:

@@ -1142,6 +1142,9 @@ pre {
   .timeline ul li h3 {
     width: 68px;
   }
+  .toc-article {
+    display:none;
+  }
 }
 /*====================================================
     highlight
@@ -1545,16 +1548,23 @@ pre .javascript .function {
   background: #eee;
   margin: 0 0 0.5em 0.2em;
   padding: 0.8em;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  /* -webkit-border-radius: 5px; */
+  /* border-radius: 5px; */
   line-height: 1.5em;
   font-size: 1em;
   float: right;
   max-width: 50%;
   min-width: 200px;
-  border: 1px solid #C0C0C0;
+  /* border: 1px solid #C0C0C0; */
   white-space: nowrap;
   overflow: hidden;
+  position: fixed;
+  left: 1%;
+  top: 157px;
+  background-color: #fff;
+  width: 17%;
+  padding: 15px;
+  display: none;
 }
 .toc-article .toc {
   margin: 0;

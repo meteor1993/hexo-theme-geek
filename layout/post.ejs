@@ -37,7 +37,7 @@
         <% } %>
     </div>
     <%- partial('_partial/gallery', {post: page}) %>
-    <div class="post-body post-content">
+    <div id="container1" class="post-body post-content">
         <%- partial('_partial/toc', null, {cache:false}) %>
         <%- page.content %>
         <%- related_posts(page, site.posts) %>
@@ -90,6 +90,16 @@
     </div>
 <% } %>
 
-
+<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+<script>
+    const btw = new BTWPlugin();
+    btw.init({
+        id: 'container1',
+        blogId: '10120-1569429486304-781',
+        name: '极客挖掘机',
+        qrcode: 'https://cdn.geekdigging.com/wechat_qrcode_344.jpg',
+        keyword: 'vip',
+    });
+</script>
 
 
